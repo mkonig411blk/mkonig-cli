@@ -1,9 +1,9 @@
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
+##require 'pry'
  
-require_relative './department.rb'
-require_relative './office.rb'
+#require_relative './department.rb'
+#require_relative './office.rb'
 require_relative './position.rb'
  
 class Scraper
@@ -12,16 +12,16 @@ class Scraper
     Nokogiri::HTML(open("https://www.sweetgreen.com/careers/"))
   end
   
-  def get_positions
+  def get_rows
     self.get_page.css.("tr")
   end
   
   def make_positions 
-    self.get_positions.each do |position|
+    self.get_rows.each do |row|
       position = Position.new 
-      position.name = position.css("td.job_title").text
-      position.department = position.css("td.job_department").text
-      position.office = position.css("td.job_location").text
+      position.name = row.css.("td.job_title").text
+      position.department = row.css.("td.job_department").text
+      position.office = row.css.("td.job_location").text
     end
   end
   

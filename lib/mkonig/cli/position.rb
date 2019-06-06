@@ -1,7 +1,7 @@
 class Position
-  extend Memorable::ClassMethods
-  extend Findable::ClassMethods
-  include Memorable::InstanceMethods
+  # extend Memorable::ClassMethods
+  # extend Findable::ClassMethods
+  # include Memorable::InstanceMethods
   
   attr_accessor :name, :department, :office 
   
@@ -10,5 +10,9 @@ class Position
   def initialize(name)
     @name = name
     @@all << self
+  end
+  
+  def self.all
+    @@all
   end
 end
