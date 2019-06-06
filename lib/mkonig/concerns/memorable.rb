@@ -9,7 +9,7 @@ module Memorable
   end
 end
  module InstanceMethods
-    def initialize
+    def save
   self.class.all << self
 end
 end
