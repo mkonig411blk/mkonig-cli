@@ -1,9 +1,9 @@
-class Position
+class Company
   # extend Findable::ClassMethods
   # extend Persistable::ClassMethods
   # include Persistable::InstanceMethods
   
-  attr_accessor :name, :company, :location, :type, :description, :link
+  attr_accessor :name 
   
   @@all = []
   
@@ -11,11 +11,4 @@ class Position
     @name = name
     # save
   end
-  
-  def self.all
-    @@all
-  end
-  
-   def self.create(name)
-   end
 end
