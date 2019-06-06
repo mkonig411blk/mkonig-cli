@@ -18,10 +18,10 @@ class Scraper
   
   def make_positions 
     self.get_rows.drop(1).each do |row|
-        position = Position.new
-        position.name = row.css("td.job_title").text
+        position = Position.new(row.css("td.job_title").text)
         position.department = row.css("td.job_department").text
         position.office = row.css("td.job_location").text
+        ## at what point should I create instances of department and office? in scraper class or position class?
     end
   end
   
