@@ -3,10 +3,10 @@ require_relative "../lib/department.rb"
 require_relative "../lib/position.rb"
 require_relative "../lib/office.rb"
 require 'nokogiri'
-require 'colorize'
 
 class CommandLineInterface
-  BASE_PATH = "./fixtures/student-site/"
+  # BASE_PATH = "./fixtures/student-site/"
+  ## should CLI class call scraper? or should scraper create text doc for CLI to access?
 
   def run
     make_students

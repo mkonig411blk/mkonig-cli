@@ -13,15 +13,15 @@ class Scraper
   end
   
   def get_rows
-    self.get_page.css.("tr")
+    self.get_page.css("tr")
   end
   
   def make_positions 
-    self.get_rows.each do |row|
-      position = Position.new 
-      position.name = row.css.("td.job_title").text
-      position.department = row.css.("td.job_department").text
-      position.office = row.css.("td.job_location").text
+    self.get_rows.drop(1).each do |row|
+        position = Position.new
+        position.name = row.css("td.job_title").text
+        position.department = row.css("td.job_department").text
+        position.office = row.css("td.job_location").text
     end
   end
   
