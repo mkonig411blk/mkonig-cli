@@ -30,10 +30,21 @@ class CommandLineInterface
               list_positions_by_office
           elsif  command == "list positions in a department"
               list_positions_by_department
-          else  
+          elsif command == "list options" || command == "help"
+              welcome_messages
+          else
           end
       end
   end 
+  
+  def welcome_messages
+    puts "To see all open positions, enter 'list positions'."
+    puts "To see all offices with open positions, enter 'list offices'."
+    puts "To see all departments with open positions, enter 'list departments'."
+    puts "To see all open positions in a particular office, enter 'list positions in an office'."
+    puts "To see all open positions in a particular department, enter 'list positions in a department'."
+    puts "To quit, type 'exit'."
+  end
   
   def list_positions
       Position.all.each_with_index do |pos,index| 
