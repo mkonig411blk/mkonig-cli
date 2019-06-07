@@ -1,8 +1,6 @@
 # Mkonig::Cli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mkonig/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the "Positions at Sweetgreen" gem! Here you can discover and find available positions at the salad spot, Sweetgreen, across offices and departments.
 
 ## Installation
 
@@ -22,13 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+For an interactive prompt, run `bin/console`.
 
-## Development
+The interactive prompt will provide you with step by step instructions on how to discover and find available positions depending on your preferences.
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+With each prompt, you will be required to provide an input from the options listed. 
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+You will continue to provide an input until you are ready to quit. At that point, you will type 'exit'.
 
 ## Contributing
 
@@ -41,3 +39,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Mkonig::Cli project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'cultured-publisher-9071'/mkonig-cli/blob/master/CODE_OF_CONDUCT.md).
+
+## Author
+
+Margot Konig
