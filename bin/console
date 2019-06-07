@@ -3,12 +3,6 @@
 require "bundler/setup"
 require_relative "../lib/mkonig/cli/environment.rb"
 require_relative "../lib/mkonig/cli/command_line_interface.rb"
-require_relative "../lib/mkonig/cli/scraper.rb"
-require_relative "../lib/mkonig/cli/office.rb"
-require_relative "../lib/mkonig/cli/position.rb"
-require_relative "../lib/mkonig/cli/department.rb"
-require_relative "../lib/mkonig/concerns/findable.rb"
-require_relative "../lib/mkonig/concerns/memorable.rb"
 
 
 CommandLineInterface.new.run

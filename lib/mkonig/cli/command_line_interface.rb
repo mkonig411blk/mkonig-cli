@@ -1,11 +1,3 @@
-require_relative "./environment.rb"
-require_relative "./scraper.rb"
-require_relative "./office.rb"
-require_relative "./position.rb"
-require_relative "./department.rb"
-require_relative "../concerns/findable.rb"
-require_relative "../concerns/memorable.rb"
-
 class CommandLineInterface
 
   def run
@@ -14,7 +6,7 @@ class CommandLineInterface
   end
 
   def scrape
-    Scraper.make_classes
+    Scraper.new.make_classes
   end
   
   def welcome 
