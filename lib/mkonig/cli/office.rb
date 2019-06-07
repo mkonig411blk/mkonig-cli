@@ -14,4 +14,9 @@ class Office
     @name = name
     save
   end
+  
+  def self.all
+    @@all
+  end
+  
 end

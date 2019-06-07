@@ -1,17 +1,38 @@
 class CommandLineInterface
-  # # BASE_PATH = "./fixtures/student-site/"
-  # ## should CLI class call scraper? or should scraper create text doc for CLI to access?
 
-  # def run
-  #   make_students
-  #   add_attributes_to_students
-  #   display_students
-  # end
+  def run
+    scrape
+    welcome
+  end
 
-  # def make_students
-  #   students_array = Scraper.scrape_index_page(BASE_PATH + 'index.html')
-  #   Student.create_from_collection(students_array)
-  # end
+  def scrape
+    Scraper.make_classes
+  end
+  
+  def welcome 
+    puts "Welcome to Margot's CLI Project to discover all of the open positions at Sweetgreen!"
+    puts "To see all open positions, enter 'list positions'."
+    puts "To see all their offices with open positions, enter 'list offices'."
+    puts "To see all their departments with open positions, enter 'list departments'."
+    puts "To see all open positions in a particular office, enter 'list offices'."
+    puts "To count how many openings exist in a particular office, enter 'list offices'."
+    puts "To see all open positions in a particular department, enter 'list departments'."
+    puts "To count how many openings exist in a particular department, enter 'list departments'."
+  end 
+  
+  def list_positions
+  end 
+  
+  def list_offices 
+  end 
+  
+  def list_departments 
+  end 
+  
+  def count_positions
+  end 
+  
+  
 
   # def add_attributes_to_students
   #   Student.all.each do |student|
