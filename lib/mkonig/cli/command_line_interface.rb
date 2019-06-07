@@ -36,21 +36,21 @@ class CommandLineInterface
   end 
   
   def list_positions
-        Position.all.each_with_index do |pos,index| 
-            puts "#{index+1}. #{pos.name} - #{pos.department.name} - #{song.office.name}" 
-        end
+      Position.all.each_with_index do |pos,index| 
+        puts "#{index+1}. #{pos.name} - #{pos.department.name} - #{song.office.name}" 
+      end
   end 
   
   def list_offices 
-        Office.all.each_with_index do |off,index| 
-            puts "#{index+1}. #{off.name}" 
-        end
+      Office.all.each_with_index do |off,index| 
+        puts "#{index+1}. #{off.name}" 
+      end
   end 
   
   def list_departments 
-        Department.all.each_with_index do |dpt,index| 
-            puts "#{index+1}. #{dpt.name}" 
-        end
+      Department.all.each_with_index do |dpt,index| 
+        puts "#{index+1}. #{dpt.name}" 
+      end
   end 
   
   def list_positions_by_office

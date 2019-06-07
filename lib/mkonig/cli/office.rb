@@ -19,4 +19,21 @@ class Office
     @@all
   end
   
+  def self.all_names
+    @@all.each {|off| off.name}
+  end
+  
+  def positions 
+    Position.all.select do |pos|
+      pos.office == self 
+    end
+  end
+  
+  def departments 
+    departments = positions.map do |pos|
+      pos.department
+    end
+    departments.uniq
+  end
+  
 end

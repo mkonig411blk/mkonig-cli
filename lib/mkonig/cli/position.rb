@@ -19,6 +19,6 @@ class Position
     @@all
   end
   
-   def self.create(name)
-   end
+  # def self.create(name)
+  # end
 end

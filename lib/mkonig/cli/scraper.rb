@@ -21,11 +21,14 @@ class Scraper
 
   def make_classes
     self.get_rows.each do |row|
-      position = Position.new(row.css("td.job_title").text)
-      position.department = row.css("td.job_department").text
-      position.office = row.css("td.job_location").text
-      department = Department.new(position.department) unless Department.all.include?(position.department)
-      office = Office.new(position.office) unless Department.all.include?(position.office)
+      position_name = row.css("td.job_title").text
+      department_name = row.css("td.job_department").text
+      office_name = row.css("td.job_location").text
+      position = Position.new(position_name)
+      department = Department.new(department_name) unless Department.all_names.include?(department_name)
+      office = Office.new(office_name) unless Office.all_names.include?(office_name)
+      position.department = department
+      position.office = office
     end
   end
 
