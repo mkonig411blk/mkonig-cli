@@ -37,7 +37,7 @@ class CommandLineInterface
   
   def list_positions
       Position.all.each_with_index do |pos,index| 
-        puts "#{index+1}. #{pos.name} - #{pos.department.name} - #{song.office.name}" 
+        puts "#{index+1}. #{pos.name} - #{pos.department.name} in #{pos.office.name}" 
       end
   end 
   
@@ -55,14 +55,15 @@ class CommandLineInterface
   
   def list_positions_by_office
     list_offices
-    puts "Please enter an office:"
+    puts "Please enter an office name:"
     input = gets.chomp.downcase
+    counter = 1
       if office = Office.all.find {|off| off.name.downcase == input}
-          Position.all.each_with_index do |pos, index| 
+          Position.all.each do |pos| 
               if pos.office.name.downcase == input
-                  puts "#{index+1}. #{pos.name} - #{pos.department.name} - #{song.office.name}" 
+                  puts "#{counter}. #{pos.name} - #{pos.department.name} in #{pos.office.name}" 
+                  counter += 1
               else
-                #skip?
               end
           end
       end
@@ -70,39 +71,18 @@ class CommandLineInterface
   
   def list_positions_by_department
     list_departments
-    puts "Please enter a department:"
+    puts "Please enter a department name:"
     input = gets.chomp.downcase
+    counter = 1
       if department = Department.all.find {|dpt| dpt.name.downcase == input}
           Position.all.each_with_index do |pos, index| 
               if pos.department.name.downcase == input
-                  puts "#{index+1}. #{pos.name} - #{pos.department.name} - #{song.office.name}" 
+                  puts "#{counter}. #{pos.name} - #{pos.department.name} in #{pos.office.name}" 
+                  counter += 1
               else
-                next
-                ## check whether next works this way
               end
           end
       end
   end 
-
-  # def add_attributes_to_students
-  #   Student.all.each do |student|
-  #     attributes = Scraper.scrape_profile_page(BASE_PATH + student.profile_url)
-  #     student.add_student_attributes(attributes)
-  #   end
-  # end
-
-  # def display_students
-  #   Student.all.each do |student|
-  #     puts "#{student.name.upcase}".colorize(:blue)
-  #     puts "  location:".colorize(:light_blue) + " #{student.location}"
-  #     puts "  profile quote:".colorize(:light_blue) + " #{student.profile_quote}"
-  #     puts "  bio:".colorize(:light_blue) + " #{student.bio}"
-  #     puts "  twitter:".colorize(:light_blue) + " #{student.twitter}"
-  #     puts "  linkedin:".colorize(:light_blue) + " #{student.linkedin}"
-  #     puts "  github:".colorize(:light_blue) + " #{student.github}"
-  #     puts "  blog:".colorize(:light_blue) + " #{student.blog}"
-  #     puts "----------------------".colorize(:green)
-  #   end
-  # end
 
 end

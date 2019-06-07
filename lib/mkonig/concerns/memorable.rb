@@ -8,10 +8,6 @@ module Memorable
     all.count
   end
   
-  def all 
-    all
-  end
-  
 end
  module InstanceMethods
     def save
