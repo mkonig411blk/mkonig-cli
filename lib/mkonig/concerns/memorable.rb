@@ -7,6 +7,11 @@ module Memorable
   def count
     all.count
   end
+  
+  def all 
+    all
+  end
+  
 end
  module InstanceMethods
     def save

@@ -51,4 +51,4 @@ class Scraper
 
 end
 
-Scraper.new.print_positions 
+# Scraper.new.print_positions 
