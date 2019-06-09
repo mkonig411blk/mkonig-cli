@@ -16,6 +16,7 @@ class CommandLineInterface
     puts "To see all departments with open positions, enter 'list departments'."
     puts "To see all open positions in a particular office, enter 'list positions in an office'."
     puts "To see all open positions in a particular department, enter 'list positions in a department'."
+    puts "To search all open positions by name, enter 'search positions by name'."
     puts "To quit, type 'exit'."
     command = ""
     until command == "exit"
@@ -30,6 +31,8 @@ class CommandLineInterface
               list_positions_by_office
           elsif  command == "list positions in a department"
               list_positions_by_department
+          elsif command == "search positions by name"
+              search_positions_by_name
           elsif command == "list options" || command == "help"
               welcome_messages
           else
@@ -43,6 +46,7 @@ class CommandLineInterface
     puts "To see all departments with open positions, enter 'list departments'."
     puts "To see all open positions in a particular office, enter 'list positions in an office'."
     puts "To see all open positions in a particular department, enter 'list positions in a department'."
+    puts "To search all open positions by name, enter 'search positions by name'."
     puts "To quit, type 'exit'."
   end
   
@@ -95,5 +99,17 @@ class CommandLineInterface
           end
       end
   end 
-
+  
+  def search_positions_by_name 
+    puts "Please enter a position name to search for:"
+    input = gets.chomp.downcase
+    # if Position.find_by_name(input)
+          test = Position.find_by_name(input)
+          puts test
+      # else 
+      #     puts "No positions found."
+      # end 
+  end
+    
+  
 end

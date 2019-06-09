@@ -18,7 +18,7 @@ class Position
   def self.all
     @@all
   end
-  
-  # def self.create(name)
-  # end
 end
+
+test = Position.new(cashier)
+Position.find_by_name(cashier)
