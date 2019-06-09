@@ -19,6 +19,3 @@ class Position
     @@all
   end
 end
-
-test = Position.new(cashier)
-Position.find_by_name(cashier)

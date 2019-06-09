@@ -103,13 +103,12 @@ class CommandLineInterface
   def search_positions_by_name 
     puts "Please enter a position name to search for:"
     input = gets.chomp.downcase
-    # if Position.find_by_name(input)
-          test = Position.find_by_name(input)
-          puts test
-      # else 
-      #     puts "No positions found."
-      # end 
+    if Position.find_by_name(input)
+         position = Position.find_by_name(input)
+         puts "#{position.name} - #{position.department.name} in #{position.office.name}"
+      else 
+          puts "No positions found."
+      end 
   end
-    
   
 end
